@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SMA Harapan Bangsa</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="navbar">
+      <nav>
+        <div class="logo">SMA <span>Harapan Bangsa</span></div>
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#fasilitas">Fasilitas</a></li>
+          <li><a href="#" onclick="logout()" class="logout-link">Keluar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- SECTION 1: BERANDA (Hero) -->
+    <section id="beranda" class="hero">
+      <div class="hero-content">
+        <span class="badge">Penerimaan Siswa Baru 2026 Telah Dibuka</span>
+        <h1>
+          Membentuk Pemimpin <br /><span class="text-gradient"
+            >Masa Depan Dunia.</span
+          >
+        </h1>
+        <p>
+          Selamat datang di portal akademik SMA Harapan Bangsa. Kami tidak hanya
+          memberikan pendidikan, tetapi juga membangun karakter, integritas, dan
+          inovasi untuk menghadapi tantangan global di era digital.
+        </p>
+        <div class="hero-btns">
+          <a href="#profil" class="btn btn-primary">Mengenal Kami</a>
+          <a href="#fasilitas" class="btn btn-outline">Eksplorasi Sekolah</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PROFIL (Clean White) -->
+    <section id="profil" class="content-section section-profil">
+      <div class="container-flex">
+        <div class="image-box">
+          <div class="experience-badge"><b>25+</b> <br />Tahun Berkarya</div>
+          <img
+            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070"
+            alt="Siswa Belajar"
+          />
+        </div>
+        <div class="text-box">
+          <h2 class="section-title">
+            Dedikasi Untuk <br />Pendidikan Berkualitas
+          </h2>
+          <p>
+            SMA Harapan Bangsa berdiri dengan visi menjadi pusat keunggulan
+            pendidikan di Indonesia. Kami menerapkan kurikulum yang
+            mengintegrasikan kecerdasan intelektual, emosional, dan spiritual.
+          </p>
+          <div class="misi-list">
+            <div class="misi-item">
+              <strong>Visi:</strong> Menjadi sekolah unggulan yang menghasilkan
+              lulusan berstandar internasional.
+            </div>
+            <div class="misi-item">
+              <strong>Misi:</strong> Menumbuhkan budaya literasi, riset, dan
+              nilai-nilai moral yang luhur dalam setiap proses belajar.
+            </div>
+          </div>
+          <ul class="stats">
+            <li><strong>A+</strong> Akreditasi Nasional</li>
+            <li><strong>98%</strong> Lulus PTN/Luar Negeri</li>
+            <li><strong>1:15</strong> Rasio Guru & Siswa</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FASILITAS (Modern Grid) -->
+    <section id="fasilitas" class="content-section section-fasilitas">
+      <div class="section-header">
+        <h2 class="section-title">Fasilitas Modern</h2>
+        <p class="section-subtitle">
+          Kami menyediakan infrastruktur tercanggih untuk mendukung minat dan
+          bakat setiap siswa.
+        </p>
+      </div>
+
+      <div class="grid-container">
+        <div class="card-modern">
+          <div class="icon">🔬</div>
+          <h3>Laboratorium Riset</h3>
+          <p>
+            Laboratorium IPA dan Bahasa yang dilengkapi peralatan mutakhir untuk
+            mendukung eksperimen dan penemuan baru.
+          </p>
+        </div>
+        <div class="card-modern">
+          <div class="icon">💻</div>
+          <h3>Creative Hub</h3>
+          <p>
+            Ruang kolaborasi digital dengan perangkat high-end untuk coding,
+            desain grafis, dan produksi multimedia.
+          </p>
+        </div>
+        <div class="card-modern">
+          <div class="icon">🎭</div>
+          <h3>Amfiteater Seni</h3>
+          <p>
+            Pusat pengembangan bakat seni pertunjukan, musik, dan teater dengan
+            sistem tata suara terbaik.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 SMA Harapan Bangsa. Terakreditasi Unggul.</p>
+    </footer>
+
+    <script>
+      // Proteksi Halaman
+      if (!localStorage.getItem("user")) {
+        window.location.href = "index.html";
+      }
+
+      function logout() {
+        if (confirm("Apakah Anda yakin ingin keluar?")) {
+          localStorage.removeItem("user");
+          window.location.href = "index.html";
+        }
+      }
+
+      // Efek Navbar saat scroll
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
